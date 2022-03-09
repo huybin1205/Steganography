@@ -8,16 +8,16 @@ def readContentFile(path):
 
 def encryptImage(pathImage, pathMessageFile, pathOutput):
     try:
-        key = Steganography.generate_key('key')
-        encrypted = Steganography.encrypt('key', pathImage, pathMessageFile)
+        key = Steganography.generate_key('Images/key')
+        encrypted = Steganography.encrypt('Images/key', pathImage, pathMessageFile)
         encrypted.save(pathOutput)
-        return readContentFile('key')
+        return readContentFile('Images/key')
     except:
         return -1
 
 def decryptImage(pathImage):
     try:
-        return Steganography.decrypt('key', pathImage)
+        return Steganography.decrypt('Images/key', pathImage)
     except:
         return -1
 
